@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/router/index.ts","./src/stores/auth.ts","./src/utils/axios.ts","./src/app.vue","./src/components/helloworld.vue","./src/layouts/defaultlayout.vue","./src/pages/employeedetailpage.vue","./src/pages/employeelistpage.vue","./src/pages/loginpage.vue"],"version":"5.9.3"}

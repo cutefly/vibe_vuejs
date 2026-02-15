@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: employee-management
+  profiles:
+    active: local
+  cloud:
+    vault:
+      enabled: true
+      uri: ${VAULT_ADDR:http://localhost:8200}
+      token: ${VAULT_TOKEN}
+      kv:
+        enabled: true
+        backend: secret
+        default-context: ${spring.application.name}
+
+server:
+  port: 8080

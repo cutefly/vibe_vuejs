@@ -1,0 +1,21 @@
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #64748b;
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
+  --error-color: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.p-component {
+  font-family: inherit;
+}

@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://db.club012.com:5432/vibe_db
+    username: ${DB_USERNAME:vibe_user}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  data:
+    redis:
+      host: db.club012.com
+      port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
