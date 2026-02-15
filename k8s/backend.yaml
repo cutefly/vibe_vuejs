@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vibe-backend
+  namespace: vibe-system
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vibe-backend
+  template:
+    metadata:
+      labels:
+        app: vibe-backend
+    spec:
+      containers:
+      - name: backend
+        image: cutefly/vibe-backend:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "local"
+        - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: vibe-config
+              key: DB_URL
+        - name: DB_USERNAME
+          value: "vibe_user"
+        - name: DB_PASSWORD
+          value: "user_vibe"
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: vibe-config
+              key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: vibe-config
+              key: REDIS_PORT
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vibe-backend-service
+  namespace: vibe-system
+spec:
+  selector:
+    app: vibe-backend
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP

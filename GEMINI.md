@@ -79,20 +79,22 @@ function login(credentials: LoginCredentials) {
 
 ### Directory Structure
 ```
-src/
-├── assets/          # Static assets (images, fonts, etc.)
-├── components/      # Reusable Vue components
-│   ├── common/      # Generic/shared components
-│   └── features/    # Feature-specific components
-├── composables/     # Composition API composables
-├── layouts/         # Layout components
-├── pages/           # Page/view components
-├── router/          # Vue Router configuration
-├── stores/          # Pinia stores
-├── types/           # TypeScript type definitions
-├── utils/           # Utility functions
-├── services/        # API services
-└── App.vue          # Root component
+.
+├── frontend/           # Vue 3 Frontend
+│   ├── src/            # Static assets (images, fonts, etc.)
+│   ├── components/     # Reusable Vue components
+│   ├── composables/    # Composition API composables
+│   ├── layouts/        # Layout components
+│   ├── pages/          # Page/view components
+│   ├── router/         # Vue Router configuration
+│   ├── stores/         # Pinia stores
+│   ├── types/          # TypeScript type definitions
+│   ├── utils/          # Utility functions
+│   ├── services/       # API services
+│   └── App.vue         # Root component
+└── backend/            # Spring Boot Backend
+    ├── src/            # Java source files
+    └── pom.xml         # Maven configuration
 ```
 
 ## Development Guidelines
@@ -197,21 +199,26 @@ VITE_API_URL=https://api.example.com
 VITE_APP_NAME=My App
 ```
 
-## Build & Deployment
+## Build & Deployment (Frontend)
+
+Commands should be run from the `frontend/` directory.
 
 ### Development
 ```bash
+cd frontend
 npm run dev
 ```
 
 ### Production Build
 ```bash
+cd frontend
 npm run build
 npm run preview  # Preview production build locally
 ```
 
 ### Type Checking
 ```bash
+cd frontend
 npm run type-check
 ```
 

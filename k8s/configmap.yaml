@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vibe-config
+  namespace: vibe-system
+data:
+  DB_URL: "jdbc:postgresql://db.club012.com:5432/vibe_db"
+  REDIS_HOST: "db.club012.com"
+  REDIS_PORT: "6379"
+  VITE_API_BASE_URL: "http://vibe-backend-service:8080"
